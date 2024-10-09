@@ -1,0 +1,121 @@
+import matplotlib.pyplot as plt
+from fpdf import FPDF
+import markdown2
+
+# Create a sample slide deck (PDF) for "arktik-workshop-presentation-1.pdf"
+pdf = FPDF()
+pdf.set_auto_page_break(auto=True, margin=15)
+
+# Title Slide
+pdf.add_page()
+pdf.set_font("Arial", "B", 24)
+pdf.cell(200, 20, txt="AI and Blockchain in Modern Business", ln=True, align="C")
+pdf.set_font("Arial", size=12)
+pdf.cell(200, 20, txt="Presented by ARKTIK Initiative", ln=True, align="C")
+
+# Slide 1: Introduction to AI
+pdf.add_page()
+pdf.set_font("Arial", "B", 20)
+pdf.cell(200, 10, txt="Introduction to AI", ln=True)
+pdf.set_font("Arial", size=12)
+pdf.ln(10)
+pdf.multi_cell(0, 10, txt="Artificial Intelligence (AI) is the simulation of human intelligence processes by machines, "
+                          "especially computer systems. AI applications can include expert systems, natural language processing, "
+                          "speech recognition, and machine vision.")
+
+# Slide 2: Blockchain Basics
+pdf.add_page()
+pdf.set_font("Arial", "B", 20)
+pdf.cell(200, 10, txt="Blockchain Basics", ln=True)
+pdf.set_font("Arial", size=12)
+pdf.ln(10)
+pdf.multi_cell(0, 10, txt="Blockchain is a system of recording information in a way that makes it difficult or impossible to "
+                          "change, hack, or cheat the system. It is essentially a digital ledger of transactions that is duplicated "
+                          "and distributed across the entire network of computer systems.")
+
+# Slide 3: Case Studies
+pdf.add_page()
+pdf.set_font("Arial", "B", 20)
+pdf.cell(200, 10, txt="Case Studies: AI and Blockchain in Business", ln=True)
+pdf.set_font("Arial", size=12)
+pdf.ln(10)
+pdf.multi_cell(0, 10, txt="1. AI in Retail: Automated inventory management and customer service.\n"
+                          "2. Blockchain in Healthcare: Secure patient data management.\n"
+                          "3. AI & Blockchain in Finance: Fraud detection and secure transactions.")
+
+# Slide 4: Key Takeaways
+pdf.add_page()
+pdf.set_font("Arial", "B", 20)
+pdf.cell(200, 10, txt="Key Takeaways", ln=True)
+pdf.set_font("Arial", size=12)
+pdf.ln(10)
+pdf.multi_cell(0, 10, txt="1. AI and Blockchain are transformative technologies that offer significant business value.\n"
+                          "2. Implementing these technologies can increase efficiency, security, and transparency.\n"
+                          "3. ARKTIK Initiative can help you integrate these solutions into your business.")
+
+# Output the sample slide deck PDF
+pdf_output_path = "/mnt/data/arktik-workshop-presentation-1.pdf"
+pdf.output(pdf_output_path)
+
+# Create a sample worksheet (PDF) for "arktik-worksheet-1.pdf"
+pdf = FPDF()
+pdf.add_page()
+
+# Worksheet Title
+pdf.set_font("Arial", "B", 16)
+pdf.cell(200, 10, txt="ARKTIK Initiative Workshop: Identifying AI Opportunities in Your Business", ln=True, align="C")
+pdf.ln(10)
+
+# Worksheet content
+pdf.set_font("Arial", size=12)
+pdf.multi_cell(0, 10, txt="In this worksheet, you will identify key areas in your business where AI and Blockchain technologies can "
+                          "create value. Please answer the following questions.")
+
+pdf.ln(5)
+pdf.set_font("Arial", "B", 12)
+pdf.cell(200, 10, txt="1. What areas of your business could be automated using AI?", ln=True)
+pdf.ln(5)
+pdf.set_font("Arial", size=12)
+pdf.multi_cell(0, 10, txt="Answer: ________________________________________________")
+
+pdf.ln(10)
+pdf.set_font("Arial", "B", 12)
+pdf.cell(200, 10, txt="2. How would Blockchain improve transparency in your operations?", ln=True)
+pdf.ln(5)
+pdf.set_font("Arial", size=12)
+pdf.multi_cell(0, 10, txt="Answer: ________________________________________________")
+
+pdf_output_path_worksheet = "/mnt/data/arktik-worksheet-1.pdf"
+pdf.output(pdf_output_path_worksheet)
+
+# Create a sample lesson plan (Markdown) for "arktik-lesson-plan-1.md"
+lesson_plan_md_content = """
+# ARKTIK Workshop - Lesson Plan 1
+
+**Workshop Title**: “Leveraging AI for Business Automation”  
+**Date**: October 15, 2024  
+**Duration**: 2 hours
+
+## Objectives
+- Introduce the basics of AI and its application in business automation.
+- Teach participants how to identify areas in their business where AI can add value.
+- Provide hands-on exercises for AI integration.
+
+## Lesson Structure
+1. **Introduction (15 minutes)**: Overview of AI and its potential in business.
+2. **Lecture (30 minutes)**: Discuss real-world examples of AI business automation.
+3. **Group Activity (30 minutes)**: Participants brainstorm areas of their business where AI can be applied.
+4. **Worksheet Completion (30 minutes)**: Participants fill out worksheets based on group activity.
+5. **Q&A and Wrap-Up (15 minutes)**: Final questions, discussion of next steps, and resources.
+
+## Materials Needed
+- Projector for slide deck
+- Printed worksheets for participants
+"""
+
+lesson_plan_md_path = "/mnt/data/arktik-lesson-plan-1.md"
+with open(lesson_plan_md_path, "w") as f:
+    f.write(lesson_plan_md_content)
+
+# Confirm the file creation
+pdf_output_path, pdf_output_path_worksheet, lesson_plan_md_path
